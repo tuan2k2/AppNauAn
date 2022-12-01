@@ -1,16 +1,25 @@
 package com.example.cookpro.model;
 
 public class foodModel {
- private String anhmonan ,  tenmonan , tacgia, anhtacgia;
+ private String anhmonan ,  tenmonan , tacgia, anhtacgia , tendanhmuc;
 
-    public foodModel(String anhmonan, String tenmonan, String tacgia, String anhtacgia) {
+    public foodModel(String anhmonan, String tenmonan, String tacgia, String anhtacgia , String tendanhmuc) {
         this.anhmonan = anhmonan;
         this.tenmonan = tenmonan;
         this.tacgia = tacgia;
         this.anhtacgia = anhtacgia;
+        this.tendanhmuc = tendanhmuc;
     }
 
     public foodModel() {
+    }
+
+    public String getTendanhmuc() {
+        return tendanhmuc;
+    }
+
+    public void setTendanhmuc(String tendanhmuc) {
+        this.tendanhmuc = tendanhmuc;
     }
 
     public String getAnhmonan() {

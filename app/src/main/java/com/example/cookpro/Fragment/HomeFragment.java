@@ -94,7 +94,7 @@ public class HomeFragment extends Fragment {
         foodRecyclerView.setLayoutManager(new LinearLayoutManager(getContext() , RecyclerView.HORIZONTAL , false));
         FirebaseRecyclerOptions<foodModel> optionsFood =
                 new FirebaseRecyclerOptions.Builder<foodModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("CookProManagement/DanhMuc/id/monan"), foodModel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("CookProManagement/monan"), foodModel.class)
                         .build();
         foodAdapter = new foodAdapter(optionsFood);
         foodRecyclerView.setAdapter(foodAdapter);
