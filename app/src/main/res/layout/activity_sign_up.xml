@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Sign_in">
-
+    tools:context=".SignUp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -116,7 +115,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="20px">
 
                 <ImageView
                     android:id="@+id/imgpass"
@@ -138,6 +138,39 @@
                     android:hint="password"
                     android:inputType="textPassword"
                     android:textColor="@color/colorTextPrimary" />
+
+            </LinearLayout>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/colorTextHint" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="20px">
+
+                <ImageView
+                    android:id="@+id/imgrepass"
+                    android:layout_width="172dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/key"
+                    app:tint="@color/colorTextHint" />
+
+                <EditText
+                    android:id="@+id/edrepass"
+                    android:layout_width="254dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:ems="10"
+                    android:fontFamily="@font/alef"
+                    android:hint="password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorTextPrimary" />
+
             </LinearLayout>
 
             <View
@@ -153,14 +186,8 @@
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Remember" />
+                    android:text="Tôi đồng ý với điều khoản của ứng dụng" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="350px"
-                    android:text="Forgot password?"
-                    android:textColor="@color/black" />
 
             </LinearLayout>
 
@@ -171,110 +198,10 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="50px"
                 android:background="@drawable/primary_button_background"
-                android:text="LOGIN"
+                android:text="SIGNUP"
                 android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="50px"/>
+                android:textColor="#fff" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40px">
-
-                <View
-                    android:layout_width="130dp"
-                    android:layout_height="3px"
-                    android:layout_gravity="center"
-                    android:background="@color/colorTextHint" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="70px"
-                    android:layout_marginRight="70px"
-                    android:text="HOẶC" />
-
-                <View
-                    android:layout_width="130dp"
-                    android:layout_height="3px"
-                    android:layout_gravity="center"
-                    android:background="@color/colorTextHint" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_marginTop="20px">
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="14dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/logofb" />
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="33dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="Facebook" />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="20dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/logogg" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="TextView" />
-            </LinearLayout>
-
-            <LinearLayout
-
-                android:layout_width="163dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20px"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/alef"
-                    android:text="New account?" />
-
-                <TextView
-                    android:id="@+id/txtsignup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/alef"
-                    android:text="Sign up"
-                    android:textColor="#008EFF" />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="100px"
-                android:fontFamily="@font/alef"
-                android:text="Forgot password?"
-                android:textColor="#008EFF" />
 
         </LinearLayout>
 

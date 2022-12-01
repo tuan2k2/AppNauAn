@@ -17,5 +17,14 @@
     <color name="white_grey">#f8f5ff</color>
     <color name="gray1">#c4c4c4</color>
     <color name="yellow">#ffe500</color>
-
+    <color name="colorPrimary">#760008</color>
+    <color name="colorPrimaryDark">#131EEA</color>
+    <color name="colorLayerDark">#D6000000</color>
+    <color name="colorLayerSemiDark">#60000000</color>
+    <color name="colorAccent">#F13413</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextHint">#808080</color>
+    <color name="colorbg1">#AE00BEC5</color>
+    <color name="colorbg2">#685A5A5A</color>
 </resources>
