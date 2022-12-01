@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/lnTaiKhoan">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="420dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ava"
+                    android:layout_width="match_parent"
+                    android:layout_height="275dp"
+                    android:src="@drawable/huan" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="350dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:text="102 món"
+                    android:textSize="20dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Nhập món "
+                    android:textStyle="italic"
+                    android:textColor="#6C6868"
+                    android:textAlignment="center"
+                    android:background="@drawable/profile"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_baseline_search_24"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="70dp" >
+                <ImageView
+                    android:layout_width="45dp"
+                    android:background="@drawable/ic_baseline_arrow_back_24"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="35dp"/>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:background="@drawable/ic_baseline_share_24"
+                    android:layout_marginLeft="260dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="35dp"/>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:background="@drawable/ic_baseline_more_vert_24"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="35dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="356dp"
+                android:layout_height="180dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="160dp"
+                app:cardCornerRadius="30dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    app:cardCornerRadius="30dp"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:id="@+id/item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="0dp"
+                            android:paddingLeft="100dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/imgAvatar"
+                                android:layout_width="120dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/huan" />
+
+
+                            <TextView
+                                android:id="@+id/name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@+id/imgAvatar"
+
+                                android:hint="Phạm Văn Huấn"
+                                android:paddingLeft="20dp"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/nghedanh"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/name"
+                                android:layout_toRightOf="@+id/imgAvatar"
+                                android:hint="vanhuan@gmail.com"
+                                android:paddingLeft="20dp"
+                                android:textSize="15dp" />
+
+                            <TextView
+                                android:id="@+id/sosao"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/nghedanh"
+                                android:layout_toRightOf="@+id/imgAvatar"
+                                android:paddingLeft="20dp"
+                                android:text="☹ Quảng bình"
+                                android:textSize="15dp" />
+                            <TextView
+                                android:id="@+id/folow"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/sosao"
+                                android:layout_toRightOf="@+id/imgAvatar"
+                                android:paddingLeft="20dp"
+                                android:text="☹ 99900 follower"
+                                android:textSize="15dp" />
+
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#FF9E80"
+                                android:text="Thích " />
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#EA80FC"
+                                android:text="Liên hệ " />
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#A7FFEB"
+                                android:text="Theo giỏi " />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </RelativeLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+    </LinearLayout>
+</ScrollView>
