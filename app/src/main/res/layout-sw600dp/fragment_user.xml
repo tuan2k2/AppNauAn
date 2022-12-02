@@ -42,53 +42,54 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:text="102 món"
-                    android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="150dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="30dp"
                     android:background="@drawable/profile"
-                    android:drawableRight="@drawable/search_24px"
-                    android:hint="Nhập món"
-                    android:paddingRight="5dp"
-                    android:paddingLeft="5dp"
+                    android:drawableRight="@drawable/ic_baseline_search_24"
+                    android:text="Nhập món "
                     android:textAlignment="center"
+                    android:textColor="#6C6868"
                     android:textStyle="italic" />
             </LinearLayout>
 
             <LinearLayout
 
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="right">
-
+                android:layout_height="70dp" >
                 <ImageView
-                    android:layout_width="40dp"
+                    android:layout_width="45dp"
+                    android:background="@drawable/ic_baseline_arrow_back_24"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="35dp"/>
+                <ImageView
+                    android:layout_width="45dp"
                     android:background="@drawable/ic_baseline_share_24"
                     android:layout_marginLeft="260dp"
                     android:layout_marginTop="5dp"
-                    android:layout_height="40dp"/>
+                    android:layout_height="35dp"/>
                 <ImageView
                     android:layout_width="45dp"
                     android:background="@drawable/ic_baseline_more_vert_24"
                     android:layout_marginLeft="4dp"
                     android:layout_marginTop="5dp"
-                    android:layout_height="40dp"/>
+                    android:layout_height="35dp"/>
             </LinearLayout>
 
             <LinearLayout
 
-                android:layout_width="380dp"
-                android:layout_height="200dp"
+                android:layout_width="356dp"
+                android:layout_height="180dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="160dp"
-                app:cardCornerRadius="30dp"
-                android:layout_marginBottom="10dp">
+                app:cardCornerRadius="30dp">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
@@ -98,8 +99,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        >
+                        android:orientation="vertical">
 
 
                         <RelativeLayout
@@ -120,15 +120,13 @@
 
                             <TextView
                                 android:id="@+id/name"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_toRightOf="@+id/imgAvatar"
-                                android:text="Phạm Văn Huấn"
+
+                                android:hint="Phạm Văn Huấn"
                                 android:paddingLeft="20dp"
-                                android:layout_marginTop="5dp"
-                                android:textSize="22dp"
-                                android:textColor="#343a40"
-                                android:fontFamily="@font/a"
+                                android:textSize="20dp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -137,58 +135,34 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/name"
                                 android:layout_toRightOf="@+id/imgAvatar"
+                                android:hint="vanhuan@gmail.com"
                                 android:paddingLeft="20dp"
-                                android:text="vanhuan@gmail.com"
                                 android:textSize="15dp" />
 
-                            <LinearLayout
-                                android:id="@+id/linquequan"
+                            <TextView
+                                android:id="@+id/quequan"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:layout_marginLeft="20dp"
-                                android:orientation="horizontal"
                                 android:layout_below="@id/mail"
-                                android:layout_toRightOf="@+id/imgAvatar">
+                                android:layout_marginLeft="-1dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_toRightOf="@+id/imgAvatar"
+                                android:paddingLeft="20dp"
+                                android:text="☹ Quảng bình"
+                                android:textSize="15dp" />
 
-                                <ImageView
-                                    android:id="@+id/imageView29"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    app:srcCompat="@drawable/address_25px" />
-
-                                <TextView
-                                    android:id="@+id/quequan"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:paddingLeft="10dp"
-                                    android:text="Quảng Bình" />
-                            </LinearLayout>
-
-                            <LinearLayout
+                            <TextView
+                                android:id="@+id/folow"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:layout_marginLeft="20dp"
-                                android:orientation="horizontal"
-                                android:layout_below="@id/linquequan"
-                                android:layout_toRightOf="@+id/imgAvatar">
+                                android:layout_below="@id/quequan"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginTop="14dp"
+                                android:layout_toRightOf="@+id/imgAvatar"
+                                android:paddingLeft="20dp"
+                                android:text="☹ 99900 follower"
+                                android:textSize="15dp" />
 
-                                <ImageView
-                                    android:id="@+id/imageView292"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    app:srcCompat="@drawable/checked_user_male_24px" />
-
-                                <TextView
-                                    android:id="@+id/folow"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:paddingLeft="10dp"
-                                    android:layout_gravity="center_vertical"
-                                    android:text="5000" />
-                            </LinearLayout>
 
                         </RelativeLayout>
 
@@ -196,17 +170,25 @@
                             android:layout_width="match_parent"
                             android:orientation="horizontal"
                             android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp">
+                            android:gravity="center">
 
                             <Button
-                                android:layout_width="200dp"
-                                android:layout_height="40dp"
-                                android:textColor="#ffff"
-                                android:fontFamily="@font/a"
-                                android:background="@drawable/custom_buttonfollow"
-                                android:text="Theo dõi" />
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#FF9E80"
+                                android:text="Thích " />
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#EA80FC"
+                                android:text="Liên hệ " />
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#A7FFEB"
+                                android:text="Theo giỏi " />
                         </LinearLayout>
 
 
