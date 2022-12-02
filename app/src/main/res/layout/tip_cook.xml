@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/cauhoi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -30,7 +30,7 @@
             />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/traloi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -39,7 +39,7 @@
             android:textSize="16sp" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imgTipCook"
             android:layout_width="120dp"
             android:layout_height="103dp"
             android:layout_marginStart="15dp"

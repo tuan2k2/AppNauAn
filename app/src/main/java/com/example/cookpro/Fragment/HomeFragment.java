@@ -2,24 +2,39 @@ package com.example.cookpro.Fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.interfaces.ItemClickListener;
+import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.cookpro.model.*;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
+
+import com.denzcoskun.imageslider.ImageSlider;
 import com.example.cookpro.model.*;
 
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.Toast;
+
 import com.example.cookpro.Adapter.*;
 import com.example.cookpro.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,9 +47,12 @@ import me.relex.circleindicator.CircleIndicator;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
-    RecyclerView recyclerViewDanhMuc , foodRecyclerView;
+    RecyclerView recyclerViewDanhMuc , foodRecyclerView , tipCookRecyclerView;
     danhMucAdapter danhMucAdapter;
     foodAdapter foodAdapter;
+    tipCookAdapter tipCookAdapter;
+    ImageSlider mainslider;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -79,6 +97,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_home, container, false);
+
+        // ánh xạ phần danh mục
         recyclerViewDanhMuc=(RecyclerView)view.findViewById(R.id.danhmuc);
         recyclerViewDanhMuc.setLayoutManager(new LinearLayoutManager(getContext() , RecyclerView.HORIZONTAL , false));
 
@@ -89,15 +109,51 @@ public class HomeFragment extends Fragment {
 
         danhMucAdapter=new danhMucAdapter(options);
         recyclerViewDanhMuc.setAdapter(danhMucAdapter);
-
+        // ánh xạ phần món ăn
         foodRecyclerView = (RecyclerView) view.findViewById(R.id.rv_food);
         foodRecyclerView.setLayoutManager(new LinearLayoutManager(getContext() , RecyclerView.HORIZONTAL , false));
         FirebaseRecyclerOptions<foodModel> optionsFood =
                 new FirebaseRecyclerOptions.Builder<foodModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("CookProManagement/DanhMuc/id/monan"), foodModel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("CookProManagement/monan"), foodModel.class)
                         .build();
         foodAdapter = new foodAdapter(optionsFood);
         foodRecyclerView.setAdapter(foodAdapter);
+        // slider hình ảnh
+        mainslider = (ImageSlider) view.findViewById(R.id.slider);
+        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN , WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        List<SlideModel> slideModels = new ArrayList<>();
+        FirebaseDatabase.getInstance().getReference().child("CookProManagement/slider").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    slideModels.add(new SlideModel(dataSnapshot.child("url").getValue().toString() , ScaleTypes.FIT));
+                    mainslider.setImageList(slideModels,ScaleTypes.FIT);
+                    mainslider.setItemClickListener(new ItemClickListener() {
+                        @Override
+                        public void onItemSelected(int i) {
+                            Toast.makeText(getContext() , slideModels.get(i).getTitle().toString(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        // ánh xạ phần tipCook
+        tipCookRecyclerView=(RecyclerView)view.findViewById(R.id.recycler_tipNauAn);
+        tipCookRecyclerView.setLayoutManager(new LinearLayoutManager(getContext() , RecyclerView.HORIZONTAL , false));
+
+        FirebaseRecyclerOptions<tipCook> optionsTipCook =
+                new FirebaseRecyclerOptions.Builder<tipCook>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("CookProManagement").child("cacTipNauAn"), tipCook.class)
+                        .build();
+
+        tipCookAdapter =new tipCookAdapter(optionsTipCook);
+        tipCookRecyclerView.setAdapter(tipCookAdapter);
 
        return view;
     }
@@ -106,6 +162,7 @@ public class HomeFragment extends Fragment {
         super.onStart();
         danhMucAdapter.startListening();
         foodAdapter.startListening();
+        tipCookAdapter.startListening();
     }
 
     @Override
@@ -113,5 +170,6 @@ public class HomeFragment extends Fragment {
         super.onStop();
         danhMucAdapter.stopListening();
         foodAdapter.stopListening();
+        tipCookAdapter.stopListening();
     }
 }

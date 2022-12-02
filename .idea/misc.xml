@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Nam_3/CookPro/app/src/main/res/layout/activity_add_thong_tin.xml" value="0.18568840579710144" />
+        <entry key="..\:/Nam_3/CookPro/app/src/main/res/layout/activity_cach_lam119.xml" value="0.18568840579710144" />
+        <entry key="..\:/Nam_3/CookPro/app/src/main/res/layout/activity_main.xml" value="0.15822368421052632" />
+        <entry key="..\:/Nam_3/CookPro/app/src/main/res/layout/activity_sign_in.xml" value="0.11302083333333333" />
+        <entry key="..\:/Nam_3/CookPro/app/src/main/res/layout/activity_sign_up.xml" value="0.24954710144927536" />
+        <entry key="..\:/Nam_3/CookPro/app/src/main/res/layout/activity_sign_up2.xml" value="0.4" />
+        <entry key="..\:/Nam_3/CookPro/app/src/main/res/layout/activity_sign_up_1.xml" value="0.2" />
+        <entry key="..\:/Nam_3/CookPro/app/src/main/res/layout/fragment_home.xml" value="0.11302083333333333" />
+        <entry key="..\:/Nam_3/CookPro/app/src/main/res/layout/fragment_search.xml" value="0.11302083333333333" />
+        <entry key="..\:/Nam_3/CookPro/app/src/main/res/layout/fragment_user.xml" value="0.24954710144927536" />
+        <entry key="..\:/Nam_3/CookPro/app/src/main/res/layout/tip_cook.xml" value="0.24954710144927536" />
         <entry key="..\:/Nam_3/Lap_Trinh_Dien_Thoai_Di_Dong/CookPro/app/src/main/res/drawable-v24/bg_indicator.xml" value="0.2015" />
         <entry key="..\:/Nam_3/Lap_Trinh_Dien_Thoai_Di_Dong/CookPro/app/src/main/res/drawable-v24/rounded_shape.xml" value="0.124" />
         <entry key="..\:/Nam_3/Lap_Trinh_Dien_Thoai_Di_Dong/CookPro/app/src/main/res/drawable/backgroundcmt.xml" value="0.149" />
@@ -23,6 +34,20 @@
         <entry key="..\:/Nam_3/Lap_Trinh_Dien_Thoai_Di_Dong/CookPro/app/src/main/res/menu/menu.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/ADMIN/Desktop/CookPro/app/src/main/res/layout/activity_add_mon.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ADMIN/Desktop/CookPro/app/src/main/res/layout/activity_profile101.xml" value="0.33645833333333336" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/activity_add_mon.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/activity_cach_lam119.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/activity_profile101.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/activity_sign_in.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/activity_sign_up.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/danhmuc_items.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/food_item.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/fragment_add.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/fragment_chat.xml" value="0.2391304347826087" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/fragment_search.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/fragment_user.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Admin/Desktop/CookPro/app/src/main/res/layout/item_slider.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/dell/OneDrive/Desktop/CookPro/app/src/main/res/layout/activity_cach_lam119.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/dell/OneDrive/Desktop/CookPro/app/src/main/res/layout/food_item.xml" value="0.25416666666666665" />
       </map>
