@@ -1,18 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.SearchFragment">
+    tools:context=".Fragment.SearchFragment"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:src="@drawable/muiten"
+        android:layout_margin="10dp"></ImageView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/search_text"
-        android:textSize="30sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"/>
+        android:text="Trong tủ lạnh của bạn có gì?"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"></TextView>
 
-</FrameLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Chọn ít nhất 2 nguyên liệu" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Nhập vào nguyên liệu bạn có"></EditText>
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/daucong"
+            android:layout_margin="10dp"
+            ></ImageView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:background="@drawable/khung"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        >
+
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/tom"
+            android:layout_marginRight="10dp"></ImageView>
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="130dp"
+            android:background="khunq"
+            android:text="Tôm"></TextView>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/daunhan"
+            android:layout_marginRight="50dp"></ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:background="@drawable/khung"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        >
+
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/imgtrung"
+            android:layout_marginRight="10dp"></ImageView>
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="130dp"
+            android:background="khunq"
+            android:text="Trứng"></TextView>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/daunhan"
+            android:layout_marginRight="50dp"></ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:background="@drawable/khung"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        >
+
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/pngcucaitrang"
+            android:layout_marginRight="10dp"></ImageView>
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="130dp"
+            android:background="khunq"
+            android:text="Củ cải"></TextView>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/daunhan"
+            android:layout_marginRight="50dp"></ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:background="@drawable/khung"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        >
+
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/imgdauphu"></ImageView>
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="130dp"
+            android:background="khunq"
+            android:text="Đậu hủ"></TextView>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/daunhan"
+            android:layout_marginRight="50dp"></ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        >
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Tìm kiếm"></EditText>
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/muitenphai"
+            android:layout_margin="10dp"
+            ></ImageView>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
