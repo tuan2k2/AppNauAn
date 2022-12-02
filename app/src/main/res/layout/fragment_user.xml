@@ -41,6 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
+<<<<<<< HEAD
                     android:text="102 món"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -57,6 +58,23 @@
                     android:textAlignment="center"
                     android:textColor="#6C6868"
                     android:textStyle="italic" />
+=======
+                    android:textStyle="bold"
+                    android:text="102 món"
+                    android:textSize="20dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Nhập món "
+                    android:textStyle="italic"
+                    android:textColor="#6C6868"
+                    android:textAlignment="center"
+                    android:background="@drawable/profile"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@drawable/ic_baseline_search_24"/>
+>>>>>>> main
             </LinearLayout>
 
             <LinearLayout
@@ -130,7 +148,11 @@
                                 android:textStyle="bold" />
 
                             <TextView
+<<<<<<< HEAD
                                 android:id="@+id/mail"
+=======
+                                android:id="@+id/nghedanh"
+>>>>>>> main
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/name"
@@ -140,24 +162,38 @@
                                 android:textSize="15dp" />
 
                             <TextView
+<<<<<<< HEAD
                                 android:id="@+id/quequan"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/mail"
                                 android:layout_marginLeft="-1dp"
                                 android:layout_marginTop="8dp"
+=======
+                                android:id="@+id/sosao"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/nghedanh"
+>>>>>>> main
                                 android:layout_toRightOf="@+id/imgAvatar"
                                 android:paddingLeft="20dp"
                                 android:text="☹ Quảng bình"
                                 android:textSize="15dp" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
                             <TextView
                                 android:id="@+id/folow"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                                 android:layout_below="@id/quequan"
                                 android:layout_marginLeft="1dp"
                                 android:layout_marginTop="14dp"
+=======
+                                android:layout_below="@id/sosao"
+>>>>>>> main
                                 android:layout_toRightOf="@+id/imgAvatar"
                                 android:paddingLeft="20dp"
                                 android:text="☹ 99900 follower"
@@ -197,7 +233,10 @@
             </LinearLayout>
 
         </RelativeLayout>
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
