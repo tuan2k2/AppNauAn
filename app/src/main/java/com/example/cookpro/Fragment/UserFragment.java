@@ -39,8 +39,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 public class UserFragment extends Fragment {
 
-    private TextView Name, Email , Quequan, nguoiTheodoi;
-   private ImageView Avatar;
+    private TextView Name, Email , Quequan, nguoiTheodoi ;
+    private ImageView Avatar , ImgBia;
     private final String TAG = this.getClass().getName().toUpperCase();
     private FirebaseDatabase database;
     private DatabaseReference mDatabase;
@@ -104,19 +104,21 @@ public class UserFragment extends Fragment {
         Quequan = view.findViewById(R.id.quequan);
         nguoiTheodoi = view.findViewById(R.id.folow);
         Avatar = view.findViewById(R.id.imgAvatar);
+        ImgBia = view.findViewById(R.id.anhbia);
 
         // Read from the database
         userRef.addValueEventListener(new ValueEventListener() {
-            String fname, mail, quequan, nguoitheodoi, avatar;
+            String fname, mail, quequan, nguoitheodoi, avatar , Anhbia;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot keyId: dataSnapshot.getChildren()) {
                     if (keyId.child("email").getValue().equals(email)) {
                         fname = keyId.child("fullname").getValue(String.class);
-                        mail = keyId.child("mail").getValue(String.class);
+                        mail = keyId.child("email").getValue(String.class);
                         quequan = keyId.child("quequan").getValue(String.class);
                         nguoitheodoi = keyId.child("nguoitheodoi").getValue(String.class);
                         avatar = keyId.child("avatar").getValue(String.class);
+                        Anhbia = keyId.child("anhbia").getValue(String.class);
                         break;
                     }
                 }
@@ -125,6 +127,7 @@ public class UserFragment extends Fragment {
                 Quequan.setText(quequan);
                 nguoiTheodoi.setText(nguoitheodoi);
                 Glide.with(Avatar.getContext()).load(avatar).into(Avatar);
+                Glide.with(ImgBia.getContext()).load(Anhbia).into(ImgBia);
             }
 
             @Override

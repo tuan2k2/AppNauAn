@@ -23,7 +23,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/ava"
+                    android:id="@+id/anhbia"
                     android:layout_width="match_parent"
                     android:layout_height="275dp"
                     android:src="@drawable/huan" />
