@@ -1,5 +1,7 @@
 package com.example.cookpro.Fragment;
 
+import static android.content.ContentValues.TAG;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,12 +10,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.interfaces.ItemClickListener;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.cookpro.model.*;
 import android.os.Handler;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 
@@ -25,6 +29,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.cookpro.Adapter.*;
@@ -53,6 +59,11 @@ public class HomeFragment extends Fragment {
     tipCookAdapter tipCookAdapter;
     ImageSlider mainslider;
 
+    private static final String USERS = "users";
+
+    ImageView Avatar;
+    String  email;
+    TextView username ;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -97,7 +108,36 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_home, container, false);
+        // ánh xạ tiêu đề
+        email = getActivity().getIntent().getStringExtra("email");
 
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference userRef = rootRef.child(USERS);
+        Log.v("USERID", userRef.getKey());
+
+
+        username = (TextView) view.findViewById(R.id.username) ;
+        Avatar = (ImageView) view.findViewById(R.id.avtar) ;
+        userRef.addValueEventListener(new ValueEventListener() {
+            String fname, avatar;
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot keyId: dataSnapshot.getChildren()) {
+                    if (keyId.child("email").getValue().equals(email)) {
+                        fname = keyId.child("fullname").getValue(String.class);
+                        avatar = keyId.child("avatar").getValue(String.class);
+                        break;
+                    }
+                }
+                username.setText(fname);
+                Glide.with(Avatar.getContext()).load(avatar).into(Avatar);
+            }
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
         // ánh xạ phần danh mục
         recyclerViewDanhMuc=(RecyclerView)view.findViewById(R.id.danhmuc);
         recyclerViewDanhMuc.setLayoutManager(new LinearLayoutManager(getContext() , RecyclerView.HORIZONTAL , false));
