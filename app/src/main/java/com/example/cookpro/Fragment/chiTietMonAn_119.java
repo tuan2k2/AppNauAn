@@ -1,13 +1,17 @@
 package com.example.cookpro.Fragment;
 
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -26,6 +30,8 @@ public class chiTietMonAn_119 extends Fragment {
     TextView tenmonann , tg , sna , gth , nd , tacgiaa1 , tacgiaa2 , nguyenlieuu;
 
     ImageView anhbia , anhtacgiaa ;
+
+    Button update , dalete;
 
     VideoView videoView;
     ProgressBar progressbar;
@@ -85,7 +91,10 @@ public class chiTietMonAn_119 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View itemView = inflater.inflate(R.layout.fragment_chi_tiet_mon_an_119, container, false);
+        update = (Button) itemView.findViewById(R.id.upDateMonAn);
+        dalete = (Button) itemView.findViewById(R.id.DeleteMonAn);
         tenmonann = itemView.findViewById(R.id.tenmonCT);
         tg = (TextView) itemView.findViewById(R.id.time);
         sna = (TextView) itemView.findViewById(R.id.songuoi);
@@ -101,6 +110,7 @@ public class chiTietMonAn_119 extends Fragment {
         tenmonann.setText(tenmonan);
         tg.setText(time);
         sna.setText(songuoian);
+        gth.setText(gthmonan);
         nd.setText(ngaydang);
         tacgiaa1.setText(tacgia);
         tacgiaa2.setText(tacgia);
@@ -121,6 +131,15 @@ public class chiTietMonAn_119 extends Fragment {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 mp.start();
+            }
+        });
+
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                AddFragment fragment = new AddFragment();
+                fragmentManager.beginTransaction().replace(R.id.fragment_container , fragment).commit();
             }
         });
         return itemView;
