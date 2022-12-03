@@ -14,13 +14,13 @@
         android:theme="@style/Theme.CookPro"
         tools:targetApi="31">
         <activity
+            android:name=".monAnTheoDanhMuc"
+            android:exported="false" />
+        <activity
             android:name=".manHinhChinh"
             android:exported="false" />
         <activity
             android:name=".SignUp_1"
-            android:exported="false" />
-        <activity
-            android:name=".cachLam_119"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

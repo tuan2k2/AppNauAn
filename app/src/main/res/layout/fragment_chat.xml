@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/chat"
-        android:textSize="30sp"
         android:textColor="@color/black"
-        android:textStyle="bold"/>
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 </FrameLayout>

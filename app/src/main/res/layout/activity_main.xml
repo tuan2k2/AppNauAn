@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#fffff"
+        android:background="#ffff"
         app:itemIconSize="30sp"
         app:itemIconTint="#495057"
         app:itemTextColor="#ba181b"
