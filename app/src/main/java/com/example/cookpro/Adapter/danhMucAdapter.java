@@ -33,6 +33,11 @@ public class danhMucAdapter extends FirebaseRecyclerAdapter< danhMucModel , danh
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull danhMucModel model) {
         holder.tenDanhMuc.setText(model.getTendanhmuc());
         Glide.with(holder.imgDanhMuc.getContext()).load(model.getAnhdanhmuc()).into(holder.imgDanhMuc);
+        holder.imgDanhMuc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
     }
 
     @NonNull

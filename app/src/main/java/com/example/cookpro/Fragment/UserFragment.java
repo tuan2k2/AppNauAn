@@ -129,7 +129,6 @@ public class UserFragment extends Fragment {
                 Glide.with(Avatar.getContext()).load(avatar).into(Avatar);
                 Glide.with(ImgBia.getContext()).load(Anhbia).into(ImgBia);
             }
-
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value

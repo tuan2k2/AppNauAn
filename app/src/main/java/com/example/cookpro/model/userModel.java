@@ -8,7 +8,55 @@ public class userModel {
     private String nguoitheodoi;
     private String avatar;
     private String anhbia;
+    private String anhmonan , tenmonan , time , gioithieu , songuoian;
 
+    public userModel(String anhmonan, String tenmonan, String time, String gioithieu, String songuoian) {
+        this.anhmonan = anhmonan;
+        this.tenmonan = tenmonan;
+        this.time = time;
+        this.gioithieu = gioithieu;
+        this.songuoian = songuoian;
+    }
+
+    public String getAnhmonan() {
+        return anhmonan;
+    }
+
+    public void setAnhmonan(String anhmonan) {
+        this.anhmonan = anhmonan;
+    }
+
+    public String getTenmonan() {
+        return tenmonan;
+    }
+
+    public void setTenmonan(String tenmonan) {
+        this.tenmonan = tenmonan;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getGioithieu() {
+        return gioithieu;
+    }
+
+    public void setGioithieu(String gioithieu) {
+        this.gioithieu = gioithieu;
+    }
+
+    public String getSonguoian() {
+        return songuoian;
+    }
+
+    public void setSonguoian(String songuoian) {
+        this.songuoian = songuoian;
+    }
 
     public userModel() {}
 

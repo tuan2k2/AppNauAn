@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import com.example.cookpro.Fragment.*;
 import com.bumptech.glide.Glide;
 import com.example.cookpro.*;
 import com.example.cookpro.model.*;
@@ -14,6 +14,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -35,6 +36,13 @@ public class foodAdapter extends FirebaseRecyclerAdapter<foodModel , foodAdapter
         holder.tacgia.setText(model.getTacgia());
         Glide.with(holder.anhmonan.getContext()).load(model.getAnhmonan()).into(holder.anhmonan);
         Glide.with(holder.anhtacgia.getContext()).load(model.getAnhtacgia()).into(holder.anhtacgia);
+        holder.anhmonan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatActivity activity=(AppCompatActivity)v.getContext();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new chiTietMonAn_119(model.getAnhmonan(),model.getTenmonan(),model.getTacgia(),model.getAnhtacgia(), model.getTime(), model.getGthmonan() , model.getNgaydang() , model.getNguyenlieu() , model.getSonguoian() , model.getVideo())).addToBackStack(null).commit();
+            }
+        });
     }
 
     @NonNull
