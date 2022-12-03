@@ -50,38 +50,32 @@ public class Sign_in extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-               // checking if user is logged in
-                if (mAuth.getCurrentUser() != null) {
-                    updateUI(mAuth.getCurrentUser());
-                }
-
                 email = NhapMK.getText().toString();
                 password = NhapP.getText().toString();
-                mAuth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(Sign_in.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Log.d(TAG, "signInWithEmail:success");
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    updateUI(user);
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                    Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                if (email.equals("") || password.equals("")){
+                    Toast.makeText(Sign_in.this, "Vui lòng nhập đầy đủ thông tin",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    mAuth.signInWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(Sign_in.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        Log.d(TAG, "signInWithEmail:success");
+                                        Toast.makeText(getApplicationContext(), "Đăng nhập thành công",
+                                                Toast.LENGTH_SHORT).show();
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        updateUI(user);
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                        Toast.makeText(getApplicationContext(), "Authentication failed.",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
-                        });
-                signUp.setOnClickListener(new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v) {
-                        Intent registerIntent = new Intent(getApplicationContext(), SignUp_1.class);
-                        startActivity(registerIntent);
-                    }
-                });
+                            });
+                }
             }
         });
     }

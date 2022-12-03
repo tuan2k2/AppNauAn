@@ -74,24 +74,32 @@ public class SignUp_1 extends AppCompatActivity {
     }
 
     private void registerUser() {
-
-        mAuth.createUserWithEmailAndPassword(email, pass)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(SignUp_1.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+        if (email.equals("") || pass.equals("") || fullname.equals("") || quequan.equals("") ||nguoitheodoi.equals("") || avatar.equals("") || anhbia.equals("")){
+            Toast.makeText(SignUp_1.this, "Vui lòng nhập đầy đủ thông tin",
+                    Toast.LENGTH_SHORT).show();
+        }else {
+            mAuth.createUserWithEmailAndPassword(email, pass)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "createUserWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                updateUI(user);
+                                startActivity(new Intent(getApplicationContext() , Sign_in.class));
+                                Toast.makeText(SignUp_1.this, "Đăng kí thành công",
+                                        Toast.LENGTH_SHORT).show();
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                Toast.makeText(SignUp_1.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+        }
+
     }
 
     public void updateUI(FirebaseUser currentUser) {
