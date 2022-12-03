@@ -4,28 +4,28 @@
 
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/ic_baseline_home_24"
+        android:icon="@drawable/homeadvisor_24px"
         android:title="Home" />
 
     <item
         android:id="@+id/nav_search"
-        android:icon="@drawable/iconsearch"
+        android:icon="@drawable/search1_24px"
         android:title="Search" />
 
     <item
         android:id="@+id/nav_add"
-        android:icon="@drawable/iconadd"
+        android:icon="@drawable/add_24px"
         android:title="Like" />
 
     <item
         android:id="@+id/nav_chat"
-        android:icon="@drawable/iconchat"
+        android:icon="@drawable/messaging_24px"
         android:title="Shop" />
 
 
     <item
     android:id="@+id/nav_user"
-    android:icon="@drawable/iconuser"
+    android:icon="@drawable/male_user_24px"
     android:title="Shop" />
 
 
