@@ -59,7 +59,7 @@
 
             <TextView
                 android:id="@+id/username"
-                android:layout_width="150dp"
+                android:layout_width="205dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -108,7 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Món mới nhất"
-        android:textSize="15sp"
+        android:textSize="28dp"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/rv_food"
@@ -118,7 +118,7 @@
         android:id="@+id/rv_food"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thoigiandang" />
@@ -131,6 +131,7 @@
         android:text="Các típ nấu ăn"
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:textSize="28dp"
         app:layout_constraintStart_toStartOf="@+id/rv_food"
         app:layout_constraintTop_toBottomOf="@+id/rv_food" />
 
@@ -140,7 +141,7 @@
         android:layout_marginRight="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
+        android:layout_marginStart="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tacgiaCt" />
 </androidx.constraintlayout.widget.ConstraintLayout>

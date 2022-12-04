@@ -1,11 +1,18 @@
 package com.example.cookpro.Fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
 import com.example.cookpro.*;
+
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.cookpro.*;
 import android.os.Handler;
 import android.util.Log;
@@ -15,7 +22,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.cookpro.Adapter.search_adapter;
 import com.example.cookpro.R;
+import com.example.cookpro.model.foodModel;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +41,7 @@ import java.util.Map;
 import javax.xml.namespace.QName;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import io.reactivex.rxjava3.internal.operators.flowable.FlowableUnsubscribeOn;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,7 +49,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * create an instance of this fragment.
  */
 public class UserFragment extends Fragment {
-
+    RecyclerView recyclerView;
+    search_adapter adapter;
     private TextView Name, Email , Quequan, nguoiTheodoi ;
     private ImageView Avatar , ImgBia;
     private final String TAG = this.getClass().getName().toUpperCase();
@@ -47,6 +59,7 @@ public class UserFragment extends Fragment {
     private Map<String, String> userMap;
     private String email;
     private String userid;
+    ImageView logout;
     private static final String USERS = "users";
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -105,7 +118,30 @@ public class UserFragment extends Fragment {
         nguoiTheodoi = view.findViewById(R.id.folow);
         Avatar = view.findViewById(R.id.imgAvatar);
         ImgBia = view.findViewById(R.id.anhbia);
+        logout = view.findViewById(R.id.dangXuat);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder aBuilder = new AlertDialog.Builder(getActivity());
 
+                aBuilder.setTitle("Question");
+                aBuilder.setMessage("Bạn muốn đăng xuất chứ ?");
+                aBuilder.setIcon(R.drawable.close_24px);
+                aBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(new Intent(getActivity() , Sign_in.class));
+                    }
+                });
+                aBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                aBuilder.create().show();
+            }
+        });
         // Read from the database
         userRef.addValueEventListener(new ValueEventListener() {
             String fname, mail, quequan, nguoitheodoi, avatar , Anhbia;
@@ -135,6 +171,28 @@ public class UserFragment extends Fragment {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+        recyclerView = (RecyclerView) view.findViewById(R.id.search_rv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        FirebaseRecyclerOptions<foodModel> optionsFood =
+                new FirebaseRecyclerOptions.Builder<foodModel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("CookProManagement/monan"), foodModel.class)
+                        .build();
+        adapter = new search_adapter(optionsFood);
+        recyclerView.setAdapter(adapter);
         return view;
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
+
+    }
+
 }

@@ -37,7 +37,7 @@ public class userAdapter extends FirebaseRecyclerAdapter<userModel , userAdapter
     @NonNull
     @Override
     public viewhodel onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cacmon,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cacmon_search,parent,false);
         return new userAdapter.viewhodel(view);
     }
 
@@ -46,11 +46,6 @@ public class userAdapter extends FirebaseRecyclerAdapter<userModel , userAdapter
         ImageView anhmonan;
         public viewhodel(@NonNull View itemView) {
             super(itemView);
-            tenMonAn = itemView.findViewById(R.id.nameMonAn);
-            time = itemView.findViewById(R.id.thoiGianLam);
-            soNguoiAn = itemView.findViewById(R.id.soNguoiAn);
-            gthMonAn = itemView.findViewById(R.id.gthieumonan);
-            anhmonan = itemView.findViewById(R.id.imgmonan);
         }
     }
 }

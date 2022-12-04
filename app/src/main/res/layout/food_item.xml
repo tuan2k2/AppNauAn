@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
-    android:layout_marginStart="5dp">
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp">
 
     <LinearLayout
         android:layout_width="202dp"
-        android:layout_height="300dp"
+        android:layout_height="match_parent"
         android:background="@drawable/rounded_shape"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,29 +72,37 @@
             android:text="Mướp ngọt xào lòng"
             android:textColor="#495057"
             android:textSize="16sp" />
+
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="65dp">
+
             <Button
                 android:id="@+id/buttonUD"
+                android:layout_width="80dp"
+                android:layout_height="33dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_width="80dp"
-                android:layout_height="50dp"
                 android:background="@drawable/background_emoji"
-                android:text="Update" />
+                android:text="Update"
+                android:textSize="30px"
+                app:cardElevation="10dp" />
+
             <Button
                 android:id="@+id/buttonDelete"
+                android:layout_width="80dp"
+                android:layout_height="34dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_width="80dp"
-                android:layout_height="50dp"
                 android:background="@drawable/background_emoji"
-                android:text="Delete" />
+                android:text="Delete"
+                android:textColor="#F10F0F"
+                android:textSize="30px"
+                app:cardElevation="10dp" />
 
         </LinearLayout>
 
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

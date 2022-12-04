@@ -93,8 +93,6 @@ public class chiTietMonAn_119 extends Fragment {
         // Inflate the layout for this fragment
 
         View itemView = inflater.inflate(R.layout.fragment_chi_tiet_mon_an_119, container, false);
-        update = (Button) itemView.findViewById(R.id.upDateMonAn);
-        dalete = (Button) itemView.findViewById(R.id.DeleteMonAn);
         tenmonann = itemView.findViewById(R.id.tenmonCT);
         tg = (TextView) itemView.findViewById(R.id.time);
         sna = (TextView) itemView.findViewById(R.id.songuoi);
@@ -131,15 +129,6 @@ public class chiTietMonAn_119 extends Fragment {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 mp.start();
-            }
-        });
-
-        update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                AddFragment fragment = new AddFragment();
-                fragmentManager.beginTransaction().replace(R.id.fragment_container , fragment).commit();
             }
         });
         return itemView;

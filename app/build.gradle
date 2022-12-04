@@ -48,4 +48,5 @@ dependencies {
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     implementation 'com.orhanobut:dialogplus:1.11@aar'
+    implementation fileTree(dir: "libs", include: ["*.jar"])
 }
