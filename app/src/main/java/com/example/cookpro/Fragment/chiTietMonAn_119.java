@@ -3,6 +3,7 @@ package com.example.cookpro.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,7 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -30,10 +33,8 @@ public class chiTietMonAn_119 extends Fragment {
     TextView tenmonann , tg , sna , gth , nd , tacgiaa1 , tacgiaa2 , nguyenlieuu;
 
     ImageView anhbia , anhtacgiaa ;
-
-    Button update , dalete;
-
-    VideoView videoView;
+    ImageButton imgmp4;
+    VideoView vdView;
     ProgressBar progressbar;
     String anhmonan ,  tenmonan , tacgia, anhtacgia , time , gthmonan , ngaydang ,nguyenlieu ,songuoian ,video;
 
@@ -103,8 +104,8 @@ public class chiTietMonAn_119 extends Fragment {
         nguyenlieuu = (TextView) itemView.findViewById(R.id.nlieu);
         anhbia = itemView.findViewById(R.id.abia);
         anhtacgiaa = itemView.findViewById(R.id.tvvvv);
-        videoView =  itemView.findViewById(R.id.videoView2);
-        progressbar = itemView.findViewById(R.id.Progressbar);
+        imgmp4 = itemView.findViewById(R.id.imgmp4);
+        vdView =itemView.findViewById(R.id.vdAnhViDeo);
         tenmonann.setText(tenmonan);
         tg.setText(time);
         sna.setText(songuoian);
@@ -115,20 +116,15 @@ public class chiTietMonAn_119 extends Fragment {
         nguyenlieuu.setText(nguyenlieu);
         Glide.with(getContext()).load(anhmonan).into(anhbia);
         Glide.with(getContext()).load(anhtacgia).into(anhtacgiaa);
-        videoView.setVideoPath(video);
-
-        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+        imgmp4.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onPrepared(MediaPlayer mp) {
-                progressbar.setVisibility(View.GONE);
-                mp.start();
-            }
-        });
-
-        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                mp.start();
+            public void onClick(View v) {
+                imgmp4.setVisibility(View.INVISIBLE);
+                vdView.setVideoPath(video);
+                vdView.start();
+                MediaController mediaController = new MediaController(getActivity());
+                mediaController.setMediaPlayer(vdView);
+                vdView.setMediaController(mediaController);
             }
         });
         return itemView;

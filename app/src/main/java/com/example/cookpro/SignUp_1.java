@@ -105,6 +105,5 @@ public class SignUp_1 extends AppCompatActivity {
     public void updateUI(FirebaseUser currentUser) {
         String keyid = mDatabase.push().getKey();
         mDatabase.child(keyid).setValue(user); //adding user info to database
-
     }
 }

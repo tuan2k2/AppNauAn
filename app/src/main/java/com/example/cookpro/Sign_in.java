@@ -31,7 +31,6 @@ public class Sign_in extends AppCompatActivity {
     private Button loginButton;
     private FirebaseAuth mAuth;
     private String email, password;
-    private static final String TAG = "Sign_in";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,15 +61,13 @@ public class Sign_in extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
-                                        Log.d(TAG, "signInWithEmail:success");
                                         Toast.makeText(getApplicationContext(), "Đăng nhập thành công",
                                                 Toast.LENGTH_SHORT).show();
                                         FirebaseUser user = mAuth.getCurrentUser();
                                         updateUI(user);
                                     } else {
                                         // If sign in fails, display a message to the user.
-                                        Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                        Toast.makeText(getApplicationContext(), "Authentication failed.",
+                                        Toast.makeText(getApplicationContext(), "Tài khoản hoặc mật khẩu không chính xác",
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 }

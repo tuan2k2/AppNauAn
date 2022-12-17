@@ -293,19 +293,6 @@
                 android:layout_height="1dp"
                 android:background="@color/colorTextHint" />
 
-            <LinearLayout
-                android:layout_width="349dp"
-                android:layout_height="36dp"
-                android:layout_marginTop="50px">
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tôi đồng ý với điều khoản của ứng dụng" />
-
-
-            </LinearLayout>
-
             <Button
                 android:id="@+id/dangki"
                 android:layout_width="match_parent"
